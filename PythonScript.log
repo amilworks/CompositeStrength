@@ -1,0 +1,6 @@
+INFO:bq.modules:
+
+PARAMS : [] 
+
+ Options: {'token': None, 'pwd': None, 'user': None, 'mexURL': None, 'root': None, 'stagingPath': '', 'modulePath': None}
+DEBUG:bq.modules:Insufficient options or arguments to start this module

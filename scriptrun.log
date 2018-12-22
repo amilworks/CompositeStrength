@@ -1,0 +1,6 @@
+[2018-11-30 00:43:50]     INFO --- 
+
+PARAMS : [] 
+
+ Options: {'token': None, 'pwd': None, 'user': None, 'mexURL': None, 'root': None, 'stagingPath': '', 'modulePath': None} (PythonScriptWrapper.py:294)
+[2018-11-30 00:43:50]    DEBUG --- Insufficient options or arguments to start this module (PythonScriptWrapper.py:259)

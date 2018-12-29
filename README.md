@@ -26,4 +26,8 @@ Note: If your file needs Dream3D, we gotchu. Head over to the Dream3D module and
 
 Another Note: I am making the huge assumption that you are familiar with Material Science or know what you're doing.
 
+## Results 
+
 ![bisque](https://github.com/amilworks/BisQue_CompositeStrength/blob/master/public/composite_strength_GUI2.png)
+
+Once your run is complete, you will see the results in the block below. If your input was a dataset, you would see results for each table. Therein, you can go through each table to make sure everything makes sense.

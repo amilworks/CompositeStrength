@@ -17,3 +17,13 @@ BisQue is a free, open source web-based platform for the exchange and exploratio
 Here is a preview of a logged in [BisQue](https://bisque.ece.ucsb.edu/client_service/) user, me. Don't judge me too much. 
 
 ![bisque](https://github.com/amilworks/BisQue_CompositeStrength/blob/master/public/interface.png)
+
+Next, to see the module in all its glorious action, click on __Analyze__ at the top, find and select __Composite Strength__. You should arrive at a page that looks like this. 
+
+To run your analysis, upload your HDF5 file, select either your own `Reducer` and `Predictor`, or our calibrated ones. 
+
+Note: If your file needs Dream3D, we gotchu. Head over to the Dream3D module and upload the pipeline and your Dream3D file. Hit run, get your output HDF5, and run it through Composite Strength.
+
+Another Note: I am making the huge assumption that you are familiar with Material Science or know what you're doing.
+
+![bisque](https://github.com/amilworks/BisQue_CompositeStrength/blob/master/public/composite_strength_GUI2.png)

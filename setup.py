@@ -2,7 +2,7 @@
 import sys
 from bq.setup.module_setup import python_setup, docker_setup, require, read_config
 
-
+# PythonScriptWrapper
 def setup(params, *args, **kw):
     python_setup('PythonScriptWrapper.py', params=params)
     docker_setup('Composite_Strength', 'TwoPhasePrediction', 'twophaseprediction', params=params)

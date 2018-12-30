@@ -144,34 +144,6 @@ def pad(a, shape):
 
 
 
-# if __name__ == "__main__":
-#     import optparse
-#     parser = optparse.OptionParser()
-#     parser.add_option("-c", "--credentials", dest="credentials",
-#                       help="credentials are in the form user:password")
-#     #parser.add_option('--table_path')
-#     #parser.add_option('--mex_url')
-#     #parser.add_option('--auth_token')
-
-#     (options, args) = parser.parse_args()
-
-
-#     if options.credentials is None:
-#         table_path, mex_url,  auth_token  = args[:3]
-#         bq = BQSession().init_mex(mex_url, auth_token)
-#     else:
-#         table_path = args.pop(0)
-
-#         if not options.credentials:
-#             parser.error('need credentials')
-#         user,pwd = options.credentials.split(':')
-
-#         bq = BQSession().init_local(user, pwd)
-
-#     logging.debug("Path is {}".format(table_path))
-#     table_uniq = table_path.split('/')[-1]
-#     predict(bq, table_uniq)
-
 
 
 

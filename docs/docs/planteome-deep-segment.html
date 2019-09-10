@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4.2 Planteome Deep Segment | BisQue_Documentation.utf8.md</title>
+  <meta name="description" content="Bisque (Bio-Image Semantic Query User Environment) : Store, visualize, organize and analyze images in the cloud." />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4.2 Planteome Deep Segment | BisQue_Documentation.utf8.md" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Bisque (Bio-Image Semantic Query User Environment) : Store, visualize, organize and analyze images in the cloud." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4.2 Planteome Deep Segment | BisQue_Documentation.utf8.md" />
+  
+  <meta name="twitter:description" content="Bisque (Bio-Image Semantic Query User Environment) : Store, visualize, organize and analyze images in the cloud." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="source-code-installation.html"/>
+<link rel="next" href="rancher-2-0-setup-wkubernetes-engine.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Official UCSB BisQue Documentation</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Getting Started</a><ul>
+<li class="chapter" data-level="" data-path="bisque-docker-installation.html"><a href="bisque-docker-installation.html"><i class="fa fa-check"></i>BisQue Docker Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> BisQue Cloud Instance</a><ul>
+<li class="chapter" data-level="1.1" data-path="how-to-login-or-create-a-new-user.html"><a href="how-to-login-or-create-a-new-user.html"><i class="fa fa-check"></i><b>1.1</b> How to Login or Create a New User</a></li>
+<li class="chapter" data-level="1.2" data-path="how-to-upload-data.html"><a href="how-to-upload-data.html"><i class="fa fa-check"></i><b>1.2</b> How to Upload Data</a><ul>
+<li class="chapter" data-level="" data-path="how-to-upload-data.html"><a href="how-to-upload-data.html#step-1.-login"><i class="fa fa-check"></i>Step 1. Login</a></li>
+<li class="chapter" data-level="" data-path="how-to-upload-data.html"><a href="how-to-upload-data.html#step-2.-upload-file-or-folder"><i class="fa fa-check"></i>Step 2. Upload File or Folder</a></li>
+<li class="chapter" data-level="" data-path="how-to-upload-data.html"><a href="how-to-upload-data.html#step-3.-build-a-dataset"><i class="fa fa-check"></i>Step 3. Build a Dataset</a></li>
+<li class="chapter" data-level="" data-path="how-to-upload-data.html"><a href="how-to-upload-data.html#step-4.-setting-permissions"><i class="fa fa-check"></i>Step 4. Setting Permissions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="how-to-run-a-module.html"><a href="how-to-run-a-module.html"><i class="fa fa-check"></i><b>1.3</b> How to Run a Module</a></li>
+<li class="chapter" data-level="1.4" data-path="imagej-module.html"><a href="imagej-module.html"><i class="fa fa-check"></i><b>1.4</b> ImageJ Module</a><ul>
+<li class="chapter" data-level="" data-path="imagej-module.html"><a href="imagej-module.html#overview"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="imagej-module.html"><a href="imagej-module.html#uploading-of-imagej-pipelines"><i class="fa fa-check"></i>Uploading of ImageJ Pipelines</a></li>
+<li class="chapter" data-level="" data-path="imagej-module.html"><a href="imagej-module.html#running-an-imagej-macro"><i class="fa fa-check"></i>Running an ImageJ Macro</a></li>
+<li class="chapter" data-level="" data-path="imagej-module.html"><a href="imagej-module.html#special-bisque-extensions-for-imagej"><i class="fa fa-check"></i>Special BisQue extensions for ImageJ</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="cellprofiler-module.html"><a href="cellprofiler-module.html"><i class="fa fa-check"></i><b>1.5</b> CellProfiler Module</a><ul>
+<li class="chapter" data-level="" data-path="cellprofiler-module.html"><a href="cellprofiler-module.html#overview-1"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="cellprofiler-module.html"><a href="cellprofiler-module.html#uploading-of-cellprofiler-pipelines"><i class="fa fa-check"></i>Uploading of CellProfiler Pipelines</a></li>
+<li class="chapter" data-level="" data-path="cellprofiler-module.html"><a href="cellprofiler-module.html#running-a-cellprofiler-pipeline"><i class="fa fa-check"></i>Running a CellProfiler Pipeline</a></li>
+<li class="chapter" data-level="" data-path="cellprofiler-module.html"><a href="cellprofiler-module.html#results"><i class="fa fa-check"></i>Results</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="module-development.html"><a href="module-development.html"><i class="fa fa-check"></i><b>2</b> Module Development</a><ul>
+<li class="chapter" data-level="2.1" data-path="dockerfile.html"><a href="dockerfile.html"><i class="fa fa-check"></i><b>2.1</b> Dockerfile</a></li>
+<li class="chapter" data-level="2.2" data-path="module-xml.html"><a href="module-xml.html"><i class="fa fa-check"></i><b>2.2</b> Module XML</a><ul>
+<li class="chapter" data-level="" data-path="module-xml.html"><a href="module-xml.html#module-description"><i class="fa fa-check"></i>Module Description</a></li>
+<li class="chapter" data-level="" data-path="module-xml.html"><a href="module-xml.html#configurations-for-images-datasets-and-resources"><i class="fa fa-check"></i>Configurations for Images, Datasets, and Resources</a></li>
+<li class="chapter" data-level="" data-path="module-xml.html"><a href="module-xml.html#data-parallel-execution"><i class="fa fa-check"></i>Data-Parallel Execution</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="python-script-wrapper.html"><a href="python-script-wrapper.html"><i class="fa fa-check"></i><b>2.3</b> Python Script Wrapper</a><ul>
+<li><a href="python-script-wrapper.html#example.-python-script-wrapper"><em>Example.</em> Python Script Wrapper</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="source-code.html"><a href="source-code.html"><i class="fa fa-check"></i><b>2.4</b> Source Code</a><ul>
+<li><a href="source-code.html#example.-composite-strength-module"><em>Example.</em> Composite Strength Module</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="runtime-module-configuration.html"><a href="runtime-module-configuration.html"><i class="fa fa-check"></i><b>2.5</b> Runtime Module Configuration</a></li>
+<li class="chapter" data-level="2.6" data-path="python-setup.html"><a href="python-setup.html"><i class="fa fa-check"></i><b>2.6</b> Python Setup</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bqapi.html"><a href="bqapi.html"><i class="fa fa-check"></i><b>3</b> BQAPI</a></li>
+<li class="chapter" data-level="4" data-path="bisque-development.html"><a href="bisque-development.html"><i class="fa fa-check"></i><b>4</b> BisQue Development</a><ul>
+<li class="chapter" data-level="4.1" data-path="source-code-installation.html"><a href="source-code-installation.html"><i class="fa fa-check"></i><b>4.1</b> Source Code Installation</a><ul>
+<li class="chapter" data-level="" data-path="source-code-installation.html"><a href="source-code-installation.html#clone-the-repository-and-prepare-virtual-environment"><i class="fa fa-check"></i>Clone the repository and Prepare Virtual Environment</a></li>
+<li class="chapter" data-level="" data-path="source-code-installation.html"><a href="source-code-installation.html#configure-bisque-environment"><i class="fa fa-check"></i>Configure Bisque Environment</a></li>
+<li class="chapter" data-level="" data-path="source-code-installation.html"><a href="source-code-installation.html#run-bisque-server"><i class="fa fa-check"></i>Run Bisque Server</a></li>
+<li class="chapter" data-level="" data-path="source-code-installation.html"><a href="source-code-installation.html#upload-dataset"><i class="fa fa-check"></i>Upload Dataset</a></li>
+<li class="chapter" data-level="" data-path="source-code-installation.html"><a href="source-code-installation.html#module"><i class="fa fa-check"></i>Module</a></li>
+<li class="chapter" data-level="" data-path="source-code-installation.html"><a href="source-code-installation.html#debug-module"><i class="fa fa-check"></i>Debug Module</a></li>
+<li class="chapter" data-level="" data-path="source-code-installation.html"><a href="source-code-installation.html#g.-module-mexui"><i class="fa fa-check"></i>G. Module MEX/UI</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="planteome-deep-segment.html"><a href="planteome-deep-segment.html"><i class="fa fa-check"></i><b>4.2</b> Planteome Deep Segment</a></li>
+<li class="chapter" data-level="4.3" data-path="rancher-2-0-setup-wkubernetes-engine.html"><a href="rancher-2-0-setup-wkubernetes-engine.html"><i class="fa fa-check"></i><b>4.3</b> Rancher 2.0 Setup (w/Kubernetes engine)</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="rancher-2-0-setup-wkubernetes-engine.html"><a href="rancher-2-0-setup-wkubernetes-engine.html#pre-requisite"><i class="fa fa-check"></i><b>4.3.1</b> Pre-requisite</a></li>
+<li class="chapter" data-level="4.3.2" data-path="rancher-2-0-setup-wkubernetes-engine.html"><a href="rancher-2-0-setup-wkubernetes-engine.html#setup-workload-on-the-bq-cluster"><i class="fa fa-check"></i><b>4.3.2</b> Setup Workload on the bq-cluster</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="connoisseurgpu-workload-provisioning.html"><a href="connoisseurgpu-workload-provisioning.html"><i class="fa fa-check"></i><b>4.4</b> Connoisseur/GPU Workload provisioning</a></li>
+<li class="chapter" data-level="4.5" data-path="rancher-condor.html"><a href="rancher-condor.html"><i class="fa fa-check"></i><b>4.5</b> Rancher Condor</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="rancher-condor.html"><a href="rancher-condor.html#topology"><i class="fa fa-check"></i><b>4.5.1</b> Topology</a></li>
+<li class="chapter" data-level="4.5.2" data-path="rancher-condor.html"><a href="rancher-condor.html#masterworker-condor-config"><i class="fa fa-check"></i><b>4.5.2</b> Master/Worker Condor Config</a></li>
+<li class="chapter" data-level="4.5.3" data-path="rancher-condor.html"><a href="rancher-condor.html#bisquesvc-submit-node-condor-config"><i class="fa fa-check"></i><b>4.5.3</b> BisqueSvc Submit Node Condor Config</a></li>
+<li class="chapter" data-level="4.5.4" data-path="rancher-condor.html"><a href="rancher-condor.html#state-logs"><i class="fa fa-check"></i><b>4.5.4</b> State &amp; logs</a></li>
+<li class="chapter" data-level="4.5.5" data-path="rancher-condor.html"><a href="rancher-condor.html#test-condor"><i class="fa fa-check"></i><b>4.5.5</b> Test Condor</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bisque.ece.ucsb.edu/" target="blank">UCSB BisQue Cloud Platform</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="planteome-deep-segment" class="section level2">
+<h2><span class="header-section-number">4.2</span> Planteome Deep Segment</h2>
+<p><strong>This module segments a marked object (creating a graphical object) within an input image.</strong></p>
+<p>Then the module will classify either the entire original image or the segment created in the first step. This uses PyTorch in order to do this deep segmentation.</p>
+<div id="reference" class="section level4">
+<h4><span class="header-section-number">4.2.0.1</span> <a href="https://github.com/pndaly/BisQue_Platform_Guide">Reference</a></h4>
+<ul>
+<li>Module Development Guide: <a href="https://github.com/pndaly/BisQue_Platform_Guide" class="uri">https://github.com/pndaly/BisQue_Platform_Guide</a></li>
+<li>Sample Deep Learning Module: <a href="https://github.com/Planteome/planteome-deep-segmenter-dockerized">Planteome Deep Segment Analysis</a></li>
+</ul>
+</div>
+<div id="prerequisites" class="section level4">
+<h4><span class="header-section-number">4.2.0.2</span> Prerequisites</h4>
+<ul>
+<li>Working bisque environment at <a href="http://loup.ece.ucsb.edu:8088/" class="uri">http://loup.ece.ucsb.edu:8088/</a></li>
+<li>Docker should be enabled and setup on this environment</li>
+<li>The bisque deployment server should have access to good CPU &amp; RAM since Torch &amp; Scikit-image is used</li>
+<li>Access to module folder for deploying this module (Say at ~/bisque/module)</li>
+</ul>
+</div>
+<div id="adddeploy-the-planteome-module" class="section level4">
+<h4><span class="header-section-number">4.2.0.3</span> Add/Deploy the <a href="https://github.com/Planteome/planteome-deep-segmenter-dockerized">Planteome module</a></h4>
+<ul>
+<li>Identify the bisque module folder at path ~/bisque/module</li>
+<li>Login to <a href="http://loup.ece.ucsb.edu:8088/" class="uri">http://loup.ece.ucsb.edu:8088/</a> with credentials admin:admin</li>
+<li>Download the <a href="https://github.com/Planteome/planteome-deep-segmenter-dockerized">Planteome module</a> to the bisque module folder</li>
+<li>Register the module to Bisque by opening the Module Manager
+<img src="img/module_planteome/module_menu.png" alt="Module Manager Menu" /></li>
+<li>Provide the engine URL(<a href="http://loup.ece.ucsb.edu:8088/engine_service" class="uri">http://loup.ece.ucsb.edu:8088/engine_service</a>) in the Engine service section and click load. This will list the modules by querying the engine service.</li>
+<li>Select the module named “Planteome”, drag this module to the left pane and drop it to register.
+<img src="img/module_planteome/module_add_planteome.png" alt="Module Register" /></li>
+</ul>
+</div>
+<div id="buildconfigure-the-module" class="section level4">
+<h4><span class="header-section-number">4.2.0.4</span> Build/Configure the module</h4>
+<ul>
+<li>Edit the runtime-module.cfg with relevant configuration
+<ul>
+<li>Changed the docker.hub configuration to biodev.ece.ucsb.edu:5000</li>
+</ul></li>
+<li>View/Edit the Dockerfile for the relevant packages
+<ul>
+<li>Edited versions for numpy==1.16.1 &amp; scikit-image==0.14.2</li>
+</ul></li>
+<li>Source to your bisque python environment “workon bqenv” for installation
+<ul>
+<li>pip install -r requirements.txt</li>
+<li>python setup.py</li>
+</ul></li>
+</ul>
+<p>This will install all the dependency in the modules requirements.txt file, build modules code, and create a docker image for running it. Based on your “docker.hub” configuration the setup will push the docker image to registry as [biodev.ece.ucsb.edu:5000/bisque_uplanteome]</p>
+</div>
+<div id="steps-to-run-the-algorithm-from-bisque-client" class="section level4">
+<h4><span class="header-section-number">4.2.0.5</span> Steps to run the algorithm from Bisque Client</h4>
+<ul>
+<li>Select an image to be analyzed.</li>
+<li><p>The foreground/background annotation tooltip can be found on the top-right of the module image viewer. Mark the part of the image to be segmented with foreground line(s) annotation(s). Mark the image with background annotations around the object to be segmented.
+<img src="img/module_planteome/setup_planteome.png" alt="Test Segmentation Setup" /></p></li>
+<li><p>Select which deep classifier to use, whether to segment the image, the segmentation quality, and whether to classify the entire image or the segmented object instead.</p></li>
+<li><p>Press the ‘RUN’ button. Analysis may take some time depending on the image and segmentation quality.</p></li>
+<li><p>Results are given in visual and table formats, depending on whether the segmentation and classification functionalities respectively were enabled in the options.
+<img src="img/module_planteome/results_planteome.png" alt="Test Segmentation Results" /></p></li>
+</ul>
+</div>
+<div id="isolateddevelopment-test-setup" class="section level4">
+<h4><span class="header-section-number">4.2.0.6</span> Isolated/Development test setup</h4>
+<p>Make sure you have annotated the image and have an a mex identifier availablefor manual test/run.
+This can be done by,
+- Opening the module and select image
+- Annotate the image as per the directions above
+- Configure and run the module once
+- Make note of the mex URL for this run by looking at the docker_run.log in the staging folder. This will be used for replaying the test run from the modules folder.</p>
+<p>Additional module execution information
+- When we annotate the image and click RUN on the module user interface
+- The Planteome module is created from biodev.ece.ucsb.edu:5000/bisque_uplanteome:latest</p>
+<pre><code>```
+docker create biodev.ece.ucsb.edu:5000/bisque_uplanteome \
+python PlanteomeDeepSegment.py \
+http://loup.ece.ucsb.edu:8088/module_service/mex/00-NKpU4CWiHfupgckuXBNFDd \
+admin:00-NKpU4CWiHfupgckuXBNFDd Simple True 3 False
+```</code></pre>
+<ul>
+<li>This module is run with the hash id of the docker create</li>
+</ul>
+<div id="setuprun-the-docker-container-for-test" class="section level5">
+<h5><span class="header-section-number">4.2.0.6.1</span> Setup/Run the docker container for test</h5>
+<ul>
+<li>Build the docker container
+<ul>
+<li>docker build –no-cache -t bisque_uplanteome -f Dockerfile .</li>
+<li>docker build -t biodev.ece.ucsb.edu:5000/bisque_uplanteome .</li>
+</ul></li>
+<li>Run the container and bash into it
+<ul>
+<li>docker run -it –net=host biodev.ece.ucsb.edu:5000/bisque_uplanteome bash</li>
+</ul></li>
+<li>test run the code on mex identifier
+<ul>
+<li>python PlanteomeDeepSegment.py <a href="http://loup.ece.ucsb.edu:8088/module_service/mex/00-NKpU4CWiHfupgckuXBNFDd" class="uri">http://loup.ece.ucsb.edu:8088/module_service/mex/00-NKpU4CWiHfupgckuXBNFDd</a> admin:00-NKpU4CWiHfupgckuXBNFDd Simple True 3 False</li>
+</ul></li>
+</ul>
+<p>Version: 0.3
+Author(s): Dimitrios Trigkakis, Justin Preece</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="source-code-installation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rancher-2-0-setup-wkubernetes-engine.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["BisQue_Documentation.pdf", "BisQue_Documentation.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

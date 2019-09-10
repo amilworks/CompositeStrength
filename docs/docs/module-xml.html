@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.2 Module XML | BisQue_Documentation.utf8.md</title>
+  <meta name="description" content="Bisque (Bio-Image Semantic Query User Environment) : Store, visualize, organize and analyze images in the cloud." />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.2 Module XML | BisQue_Documentation.utf8.md" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Bisque (Bio-Image Semantic Query User Environment) : Store, visualize, organize and analyze images in the cloud." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.2 Module XML | BisQue_Documentation.utf8.md" />
+  
+  <meta name="twitter:description" content="Bisque (Bio-Image Semantic Query User Environment) : Store, visualize, organize and analyze images in the cloud." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="dockerfile.html"/>
+<link rel="next" href="python-script-wrapper.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Official UCSB BisQue Documentation</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Getting Started</a><ul>
+<li class="chapter" data-level="" data-path="bisque-docker-installation.html"><a href="bisque-docker-installation.html"><i class="fa fa-check"></i>BisQue Docker Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> BisQue Cloud Instance</a><ul>
+<li class="chapter" data-level="" data-path="how-to-login-or-create-a-new-user.html"><a href="how-to-login-or-create-a-new-user.html"><i class="fa fa-check"></i>How to Login or Create a New User</a></li>
+<li class="chapter" data-level="" data-path="how-to-upload-data.html"><a href="how-to-upload-data.html"><i class="fa fa-check"></i>How to Upload Data</a><ul>
+<li class="chapter" data-level="" data-path="how-to-upload-data.html"><a href="how-to-upload-data.html#step-1.-login"><i class="fa fa-check"></i>Step 1. Login</a></li>
+<li class="chapter" data-level="" data-path="how-to-upload-data.html"><a href="how-to-upload-data.html#step-2.-upload-file-or-folder"><i class="fa fa-check"></i>Step 2. Upload File or Folder</a></li>
+<li class="chapter" data-level="" data-path="how-to-upload-data.html"><a href="how-to-upload-data.html#step-3.-build-a-dataset"><i class="fa fa-check"></i>Step 3. Build a Dataset</a></li>
+<li class="chapter" data-level="" data-path="how-to-upload-data.html"><a href="how-to-upload-data.html#step-4.-setting-permissions"><i class="fa fa-check"></i>Step 4. Setting Permissions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="module-development.html"><a href="module-development.html"><i class="fa fa-check"></i><b>2</b> Module Development</a><ul>
+<li class="chapter" data-level="2.1" data-path="dockerfile.html"><a href="dockerfile.html"><i class="fa fa-check"></i><b>2.1</b> Dockerfile</a></li>
+<li class="chapter" data-level="2.2" data-path="module-xml.html"><a href="module-xml.html"><i class="fa fa-check"></i><b>2.2</b> Module XML</a><ul>
+<li class="chapter" data-level="" data-path="module-xml.html"><a href="module-xml.html#module-description"><i class="fa fa-check"></i>Module Description</a></li>
+<li class="chapter" data-level="" data-path="module-xml.html"><a href="module-xml.html#configurations-for-images-datasets-and-resources"><i class="fa fa-check"></i>Configurations for Images, Datasets, and Resources</a></li>
+<li class="chapter" data-level="" data-path="module-xml.html"><a href="module-xml.html#data-parallel-execution"><i class="fa fa-check"></i>Data-Parallel Execution</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="python-script-wrapper.html"><a href="python-script-wrapper.html"><i class="fa fa-check"></i><b>2.3</b> Python Script Wrapper</a><ul>
+<li><a href="python-script-wrapper.html#example.-python-script-wrapper"><em>Example.</em> Python Script Wrapper</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="source-code.html"><a href="source-code.html"><i class="fa fa-check"></i><b>2.4</b> Source Code</a><ul>
+<li><a href="source-code.html#example.-composite-strength-module"><em>Example.</em> Composite Strength Module</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="runtime-module-configuration.html"><a href="runtime-module-configuration.html"><i class="fa fa-check"></i><b>2.5</b> Runtime Module Configuration</a></li>
+<li class="chapter" data-level="2.6" data-path="python-setup.html"><a href="python-setup.html"><i class="fa fa-check"></i><b>2.6</b> Python Setup</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bqapi.html"><a href="bqapi.html"><i class="fa fa-check"></i><b>3</b> BQAPI</a></li>
+<li class="chapter" data-level="4" data-path="bisque-development.html"><a href="bisque-development.html"><i class="fa fa-check"></i><b>4</b> BisQue Development</a><ul>
+<li class="chapter" data-level="4.1" data-path="source-code-installation.html"><a href="source-code-installation.html"><i class="fa fa-check"></i><b>4.1</b> Source Code Installation</a><ul>
+<li class="chapter" data-level="" data-path="source-code-installation.html"><a href="source-code-installation.html#clone-the-repository-and-prepare-virtual-environment"><i class="fa fa-check"></i>Clone the repository and Prepare Virtual Environment</a></li>
+<li class="chapter" data-level="" data-path="source-code-installation.html"><a href="source-code-installation.html#configure-bisque-environment"><i class="fa fa-check"></i>Configure Bisque Environment</a></li>
+<li class="chapter" data-level="" data-path="source-code-installation.html"><a href="source-code-installation.html#run-bisque-server"><i class="fa fa-check"></i>Run Bisque Server</a></li>
+<li class="chapter" data-level="" data-path="source-code-installation.html"><a href="source-code-installation.html#upload-dataset"><i class="fa fa-check"></i>Upload Dataset</a></li>
+<li class="chapter" data-level="" data-path="source-code-installation.html"><a href="source-code-installation.html#module"><i class="fa fa-check"></i>Module</a></li>
+<li class="chapter" data-level="" data-path="source-code-installation.html"><a href="source-code-installation.html#debug-module"><i class="fa fa-check"></i>Debug Module</a></li>
+<li class="chapter" data-level="" data-path="source-code-installation.html"><a href="source-code-installation.html#g.-module-mexui"><i class="fa fa-check"></i>G. Module MEX/UI</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>5</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://bisque.ece.ucsb.edu/" target="blank">UCSB BisQue Cloud Platform</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="module-xml" class="section level2">
+<h2><span class="header-section-number">2.2</span> Module XML</h2>
+<blockquote>
+<p><strong>FILENAME: </strong> <code>NAME_OF_MODULE.xml</code>, where <code>NAME_OF_MODULE</code> is replaced by the name of your module, i.e. <code>Dream3D.xml</code>.</p>
+</blockquote>
+<p>The module definition file lays out the interface that the system can call the module with. The simplest form simply lists the name, location and arguments need to run the modules. Here is an example of a module definition document:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">&lt;module</span><span class="ot"> name=</span><span class="st">&quot;MyData&quot;</span><span class="ot"> type=</span><span class="st">&quot;runtime&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-2" title="2">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;inputs&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-3" title="3">        <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;mex_url&quot;</span><span class="ot">      type=</span><span class="st">&quot;system-input&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb2-4" title="4">        <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;bisque_token&quot;</span><span class="ot"> type=</span><span class="st">&quot;system-input&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb2-5" title="5">        <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;image_url&quot;</span><span class="ot">    type=</span><span class="st">&quot;image&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb2-6" title="6">    <span class="kw">&lt;/tag&gt;</span></a>
+<a class="sourceLine" id="cb2-7" title="7">    </a>
+<a class="sourceLine" id="cb2-8" title="8">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;outputs&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-9" title="9">         <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;MetaData&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb2-10" title="10">         <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;MyData&quot;</span><span class="ot"> type=</span><span class="st">&quot;tag&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb2-11" title="11">    <span class="kw">&lt;/tag&gt;</span></a>
+<a class="sourceLine" id="cb2-12" title="12">    </a>
+<a class="sourceLine" id="cb2-13" title="13">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;help&quot;</span><span class="ot"> value=</span><span class="st">&quot;No help yet...&quot;</span> <span class="kw">/&gt;</span> </a>
+<a class="sourceLine" id="cb2-14" title="14">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;thumbnail&quot;</span><span class="ot"> type=</span><span class="st">&quot;file&quot;</span><span class="ot"> value=</span><span class="st">&quot;public/thumbnail.png&quot;</span> <span class="kw">/&gt;</span>   </a>
+<a class="sourceLine" id="cb2-15" title="15">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;title&quot;</span><span class="ot"> value=</span><span class="st">&quot;MetaData&quot;</span> <span class="kw">/&gt;</span> </a>
+<a class="sourceLine" id="cb2-16" title="16">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;authors&quot;</span><span class="ot"> value=</span><span class="st">&quot;The Bisque Team&quot;</span> <span class="kw">/&gt;</span> </a>
+<a class="sourceLine" id="cb2-17" title="17">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;description&quot;</span><span class="ot"> value=</span><span class="st">&quot;This module annotates an image with its embedded metadata.&quot;</span> <span class="kw">/&gt;</span> </a>
+<a class="sourceLine" id="cb2-18" title="18"><span class="kw">&lt;/module&gt;</span></a></code></pre></div>
+<p>The definition above allows the bisque system to call the module by creating a MEX.</p>
+<p>The module definition document is actually a templated MEX document. The template parameters in this case are used to render the UI for this module if the user does not want to fully implement the UI. More about this will follow.</p>
+<p>A module can define inputs and outputs and rely on the automated interface generation or can provide a fully customized user interface delivered by the module server by proxying the data made available by the engine service. Input configurations may also be used by the modules that define their own interfaces since they can call renderers provided by the module service.</p>
+<div id="module-description" class="section level3 unnumbered">
+<h3>Module Description</h3>
+<p>Each module has to be described in various way to be useful. Each module has a number required and optional parameters it has/may contain. Type in this case can control where the data is coming from, for example default “string” suggests the data is in-place. “file” directs the engine server to look for the file starting in the module root directory.</p>
+<p><strong>Title</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;title&quot;</span><span class="ot"> value=</span><span class="st">&quot;MetaData&quot;</span> <span class="kw">/&gt;</span>  </a></code></pre></div>
+<p><strong>Description</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;description&quot;</span><span class="ot"> value=</span><span class="st">&quot;This module annotates an image with its embedded metadata.&quot;</span> <span class="kw">/&gt;</span>   </a></code></pre></div>
+<p><strong>Authors</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;authors&quot;</span><span class="ot"> value=</span><span class="st">&quot;The Bisque team&quot;</span> <span class="kw">/&gt;</span> </a></code></pre></div>
+<p><strong>Thumbnail</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;thumbnail&quot;</span><span class="ot"> type=</span><span class="st">&quot;file&quot;</span><span class="ot"> value=</span><span class="st">&quot;public/thumbnail.png&quot;</span> <span class="kw">/&gt;</span>   </a></code></pre></div>
+<p><strong>Help</strong></p>
+<p>An HTML document with a module help that the user can be directed to the document can be inline.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;help&quot;</span><span class="ot"> type=</span><span class="st">&quot;file&quot;</span><span class="ot"> value=</span><span class="st">&quot;public/help.html&quot;</span> <span class="kw">/&gt;</span> </a></code></pre></div>
+<p><strong>Module Options</strong>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;module_options&quot;</span> <span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-2" title="2">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;version&quot;</span><span class="ot"> value=</span><span class="st">&quot;2&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-3" title="3"><span class="kw">&lt;/tag&gt;</span></a></code></pre></div>
+</div>
+<div id="configurations-for-images-datasets-and-resources" class="section level3 unnumbered">
+<h3>Configurations for Images, Datasets, and Resources</h3>
+<p><strong>Label</strong></p>
+<p>Specifies the label rendered before asking for a resource.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;label&quot;</span><span class="ot"> value=</span><span class="st">&quot;Select input image&quot;</span> <span class="kw">/&gt;</span></a></code></pre></div>
+<p><strong>Accepted Type</strong></p>
+<p>Defines multiple allowed types of input resource.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;accepted_type&quot;</span><span class="ot"> value=</span><span class="st">&quot;dataset&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb10-2" title="2"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;accepted_type&quot;</span><span class="ot"> value=</span><span class="st">&quot;image&quot;</span> <span class="kw">/&gt;</span></a></code></pre></div>
+<p><strong>Prohibit Upload</strong></p>
+<p>Used with resources of type image or dataset to specify that the uploader should not be allowed.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;prohibit_upload&quot;</span><span class="ot"> value=</span><span class="st">&quot;true&quot;</span><span class="ot"> type=</span><span class="st">&quot;boolean&quot;</span> <span class="kw">/&gt;</span></a></code></pre></div>
+<p><strong>Example Query</strong></p>
+<p>Allow a button “from Example” specifies the query string.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb12-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;example_query&quot;</span><span class="ot"> value=</span><span class="st">&quot;*GFAP*&quot;</span> <span class="kw">/&gt;</span></a></code></pre></div>
+<p><strong>Allow Blank</strong></p>
+<p>Makes resource optional.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;allow_blank&quot;</span><span class="ot"> value=</span><span class="st">&quot;true&quot;</span><span class="ot"> type=</span><span class="st">&quot;boolean&quot;</span> <span class="kw">/&gt;</span></a></code></pre></div>
+<hr />
+<div id="image-specific-configurations" class="section level4 unnumbered">
+<h4><code>Image</code> Specific Configurations</h4>
+<p><strong>Require Geometry</strong></p>
+<p>Enforce input <em>image</em> geometry.</p>
+<p>Here the <code>z</code> or <code>t</code> value may be:</p>
+<ul>
+<li>null or undefined - means it should not be enforced</li>
+<li>‘single’ - only one plane is allowed</li>
+<li>‘stack’ - only stack is allowed</li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;require_geometry&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb14-2" title="2">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;z&quot;</span><span class="ot"> value=</span><span class="st">&quot;stack&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb14-3" title="3">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;t&quot;</span><span class="ot"> value=</span><span class="st">&quot;single&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb14-4" title="4">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;fail_message&quot;</span><span class="ot"> value=</span><span class="st">&quot;Only supports 3D images!&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb14-5" title="5"><span class="kw">&lt;/tag&gt;</span></a></code></pre></div>
+<p><strong>Fail Message</strong></p>
+<p>Specify a message to show if failed requires validation.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;fail_message&quot;</span><span class="ot"> value=</span><span class="st">&quot;Only supports 3D images!&quot;</span> <span class="kw">/&gt;</span></a></code></pre></div>
+<hr />
+</div>
+<div id="gobject-specific-configurations" class="section level4 unnumbered">
+<h4><code>gobject</code> Specific Configurations</h4>
+<p><strong>Example</strong></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb16-1" title="1"><span class="kw">&lt;gobject</span><span class="ot"> name=</span><span class="st">&quot;tips&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb16-2" title="2">  <span class="kw">&lt;template&gt;</span></a>
+<a class="sourceLine" id="cb16-3" title="3">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;gobject&quot;</span><span class="ot"> value=</span><span class="st">&quot;point&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb16-4" title="4">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;require_gobjects&quot;</span><span class="kw">&gt;</span>              </a>
+<a class="sourceLine" id="cb16-5" title="5">        <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;amount&quot;</span><span class="ot"> value=</span><span class="st">&quot;many&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb16-6" title="6">        <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;fail_message&quot;</span><span class="ot"> value=</span><span class="st">&quot;Requires selection of root tips&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb16-7" title="7">    <span class="kw">&lt;/tag&gt;</span>              </a>
+<a class="sourceLine" id="cb16-8" title="8">  <span class="kw">&lt;/template&gt;</span></a>
+<a class="sourceLine" id="cb16-9" title="9"><span class="kw">&lt;/gobject&gt;</span></a></code></pre></div>
+<p><strong>gobject</strong></p>
+<p>Defines multiple allowed types of input gobject.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;gobject&quot;</span><span class="ot"> value=</span><span class="st">&quot;point&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb17-2" title="2"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;gobject&quot;</span><span class="ot"> value=</span><span class="st">&quot;polygon&quot;</span> <span class="kw">/&gt;</span></a></code></pre></div>
+<p>Semantic types can also be specified here:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb18-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;gobject&quot;</span><span class="ot"> value=</span><span class="st">&quot;foreground&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb18-2" title="2">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;color&quot;</span><span class="ot"> value=</span><span class="st">&quot;#00FF00&quot;</span><span class="ot"> type=</span><span class="st">&quot;color&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb18-3" title="3"><span class="kw">&lt;/tag&gt;</span></a>
+<a class="sourceLine" id="cb18-4" title="4"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;gobject&quot;</span><span class="ot"> value=</span><span class="st">&quot;background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb18-5" title="5">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;color&quot;</span><span class="ot"> value=</span><span class="st">&quot;#FF0000&quot;</span><span class="ot"> type=</span><span class="st">&quot;color&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb18-6" title="6"><span class="kw">&lt;/tag&gt;</span></a></code></pre></div>
+<p>Moreover, colors could be proposed for these semantic types to differentiate graphical annotations in modules visually.</p>
+<p>Users can also force only semantic annotations to be created basically prohibiting creation of primitive graphical elements without semantic meaning:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb19-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;semantic_types&quot;</span><span class="ot"> value=</span><span class="st">&quot;require&quot;</span> <span class="kw">/&gt;</span></a></code></pre></div>
+<p><strong>Require gobjects</strong></p>
+<p>Validate input <em>gobject</em>.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb20-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;require_gobjects&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb20-2" title="2">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;amount&quot;</span><span class="ot"> value=</span><span class="st">&quot;many&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb20-3" title="3">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;fail_message&quot;</span><span class="ot"> value=</span><span class="st">&quot;Requires select of root tips&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb20-4" title="4"><span class="kw">&lt;/tag&gt;</span></a></code></pre></div>
+<p>Configuration for <code>require_gobjects</code> consists of:</p>
+<ul>
+<li><strong>amount</strong> - constraint on the amount of objects of allowed type. The amount can take the following values:
+<ul>
+<li>null or undefined - means it should not be enforced</li>
+<li>‘single’ - only one object is allowed</li>
+<li>‘many’ - only more than one object allowed</li>
+<li>‘oneornone’ - only one or none</li>
+<li>number - exact number of objects allowed</li>
+<li><p><span class="math inline">\(\leq X\)</span> - operand followed by a number, accepts: <span class="math inline">\(&lt;,&gt;,&lt;=,&gt;=,==\)</span></p>
+<p>Example. Note that <span class="math inline">\(&lt;\)</span> sign should be encoded in an XML attribute.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;amount&quot;</span><span class="ot"> value=</span><span class="st">&quot;3&quot;</span><span class="ot"> type=</span><span class="st">&quot;number&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb21-2" title="2">or</a>
+<a class="sourceLine" id="cb21-3" title="3"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;amount&quot;</span><span class="ot"> value=</span><span class="st">&quot;&gt;=2&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb21-4" title="4">or</a>
+<a class="sourceLine" id="cb21-5" title="5"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;amount&quot;</span><span class="ot"> value=</span><span class="st">&quot;</span><span class="dv">&amp;lt;</span><span class="st">30&quot;</span> <span class="kw">/&gt;</span></a></code></pre></div></li>
+</ul></li>
+</ul>
+<p><strong>Fail Message</strong></p>
+<p>Specify a message to show if failed requires validation.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;fail_message&quot;</span><span class="ot"> value=</span><span class="st">&quot;Requires select of root tips&quot;</span> <span class="kw">/&gt;</span></a></code></pre></div>
+<p><strong>Color</strong></p>
+<p>Specify a default color for created gobjects</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;color&quot;</span><span class="ot"> value=</span><span class="st">&quot;#00FFFF&quot;</span><span class="ot"> type=</span><span class="st">&quot;color&quot;</span> <span class="kw">/&gt;</span></a></code></pre></div>
+<p>Example with semantic types and other configuration:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb24-1" title="1"><span class="kw">&lt;gobject</span><span class="ot"> name=</span><span class="st">&quot;stroke&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb24-2" title="2">    <span class="kw">&lt;template&gt;</span></a>
+<a class="sourceLine" id="cb24-3" title="3">        <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;gobject&quot;</span><span class="ot"> value=</span><span class="st">&quot;freehand_line&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb24-4" title="4">        <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;gobject&quot;</span><span class="ot"> value=</span><span class="st">&quot;foreground&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb24-5" title="5">            <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;color&quot;</span><span class="ot"> value=</span><span class="st">&quot;#00FF00&quot;</span><span class="ot"> type=</span><span class="st">&quot;color&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb24-6" title="6">        <span class="kw">&lt;/tag&gt;</span></a>
+<a class="sourceLine" id="cb24-7" title="7">        <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;gobject&quot;</span><span class="ot"> value=</span><span class="st">&quot;background&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb24-8" title="8">            <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;color&quot;</span><span class="ot"> value=</span><span class="st">&quot;#FF0000&quot;</span><span class="ot"> type=</span><span class="st">&quot;color&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb24-9" title="9">        <span class="kw">&lt;/tag&gt;</span></a>
+<a class="sourceLine" id="cb24-10" title="10">        <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;semantic_types&quot;</span><span class="ot"> value=</span><span class="st">&quot;require&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb24-11" title="11">        </a>
+<a class="sourceLine" id="cb24-12" title="12">        <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;require_gobjects&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb24-13" title="13">            <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;amount&quot;</span><span class="ot"> value=</span><span class="st">&quot;&gt;=2&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb24-14" title="14">            <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;fail_message&quot;</span><span class="ot"> value=</span><span class="st">&quot;Requires two polylines; </span></a>
+<a class="sourceLine" id="cb24-15" title="15"><span class="st">            first one inside object of interest (foreground)</span></a>
+<a class="sourceLine" id="cb24-16" title="16"><span class="st">            and second across background.&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb24-17" title="17">        <span class="kw">&lt;/tag&gt;</span></a>
+<a class="sourceLine" id="cb24-18" title="18">    <span class="kw">&lt;/template&gt;</span></a>
+<a class="sourceLine" id="cb24-19" title="19"><span class="kw">&lt;/gobject&gt;</span></a></code></pre></div>
+<hr />
+</div>
+</div>
+<div id="data-parallel-execution" class="section level3 unnumbered">
+<h3>Data-Parallel Execution</h3>
+<p>It is possible to execute any module in a data-parallel way by passing a dataset instead of an individual image. In order to do this you need to:</p>
+<ol style="list-style-type: decimal">
+<li>Indicate the resource that can be iterated on</li>
+<li>Allow that resource to accept datasets and possibly</li>
+<li>Configure renderers for iterated run</li>
+</ol>
+<div class="sourceCode" id="cb25"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb25-1" title="1"><span class="co">&lt;!-- allow iterable resource to accept datasets --&gt;</span></a>
+<a class="sourceLine" id="cb25-2" title="2"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;inputs&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb25-3" title="3">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;image_url&quot;</span><span class="ot"> type=</span><span class="st">&quot;resource&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb25-4" title="4">        <span class="kw">&lt;template&gt;</span></a>
+<a class="sourceLine" id="cb25-5" title="5">            <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;accepted_type&quot;</span><span class="ot"> value=</span><span class="st">&quot;image&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb25-6" title="6">            <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;accepted_type&quot;</span><span class="ot"> value=</span><span class="st">&quot;dataset&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb25-7" title="7">            ...</a>
+<a class="sourceLine" id="cb25-8" title="8">        <span class="kw">&lt;/template&gt;</span></a>
+<a class="sourceLine" id="cb25-9" title="9">    <span class="kw">&lt;/tag&gt;</span> </a>
+<a class="sourceLine" id="cb25-10" title="10">    ...</a>
+<a class="sourceLine" id="cb25-11" title="11"><span class="kw">&lt;/tag&gt;</span> </a>
+<a class="sourceLine" id="cb25-12" title="12"></a>
+<a class="sourceLine" id="cb25-13" title="13">...</a>
+<a class="sourceLine" id="cb25-14" title="14"><span class="co">&lt;!-- configure renderers for iterated run --&gt;</span></a>
+<a class="sourceLine" id="cb25-15" title="15"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;outputs&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb25-16" title="16">    ...         </a>
+<a class="sourceLine" id="cb25-17" title="17">    <span class="co">&lt;!-- Iterated outputs --&gt;</span></a>
+<a class="sourceLine" id="cb25-18" title="18">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;mex_url&quot;</span><span class="ot"> type=</span><span class="st">&quot;mex&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb25-19" title="19">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;resource_url&quot;</span><span class="ot"> type=</span><span class="st">&quot;dataset&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb25-20" title="20"><span class="kw">&lt;/tag&gt;</span></a>
+<a class="sourceLine" id="cb25-21" title="21"></a>
+<a class="sourceLine" id="cb25-22" title="22">.....</a>
+<a class="sourceLine" id="cb25-23" title="23"></a>
+<a class="sourceLine" id="cb25-24" title="24"><span class="co">&lt;!-- indicate the resource that can be iterated --&gt;</span></a>
+<a class="sourceLine" id="cb25-25" title="25"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;execute_options&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb25-26" title="26">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;iterable&quot;</span><span class="ot"> value=</span><span class="st">&quot;image_url&quot;</span><span class="ot"> type=</span><span class="st">&quot;dataset&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb25-27" title="27"><span class="kw">&lt;/tag&gt;</span> </a></code></pre></div>
+<p>This definition is used by the module UI to add a dataset selector for this image and let module server know by sending a proper MEX that this resource should be iterated upon. Module server will create a parallel execution iterating over the selected dataset and creating an output MEX with sub MEXes for each individual image.</p>
+<p><strong>Other Data-Parallel Types</strong></p>
+<p>One can also request parallel execution over resource types other than <code>dataset</code>. For example a very useful would be to request iteration over a MEX, where a module could accept parallelized MEX as input and iterate over sub-MEXs for parallelized processing of results. In order to do that we need to indicate the type of the input resource and additionally provide an xpath expression within that resource to find elements we would like to iterate over:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;execute_options&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb26-2" title="2">    <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;iterable&quot;</span><span class="ot"> value=</span><span class="st">&quot;input_mex&quot;</span><span class="ot"> type=</span><span class="st">&quot;mex&quot;</span> <span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb26-3" title="3">        <span class="kw">&lt;tag</span><span class="ot"> name=</span><span class="st">&quot;xpath&quot;</span><span class="ot"> value=</span><span class="st">&quot;./mex/@uri&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb26-4" title="4">    <span class="kw">&lt;/tag&gt;</span></a>
+<a class="sourceLine" id="cb26-5" title="5"><span class="kw">&lt;/tag&gt;</span> </a></code></pre></div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="dockerfile.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="python-script-wrapper.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["BisQue_Documentation.pdf", "BisQue_Documentation.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

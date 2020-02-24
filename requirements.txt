@@ -7,7 +7,7 @@ backports.shutil-get-terminal-size==1.0.0
 backports.weakref==1.0.post1
 beautifulsoup4==4.6.0
 bisque-api==0.5.9
-bleach==2.1.3
+bleach==3.1.1
 bqapi==0.5.9
 certifi==2018.4.16
 chardet==3.0.4

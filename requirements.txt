@@ -9,7 +9,7 @@ beautifulsoup4==4.6.0
 bisque-api==0.5.9
 bleach==2.1.3
 bqapi==0.5.9
-certifi==2018.4.16
+certifi==2022.12.7
 chardet==3.0.4
 cloudpickle==0.5.3
 configparser==3.5.0

@@ -1,11 +1,14 @@
+![github-yieldstrength](https://user-images.githubusercontent.com/22850980/233224946-c83341e1-55d4-4747-a878-fe1b15113d90.svg)
+
 # **Composite Strength Module**
 ### Amil Khan, Marat Latypov | Version 2
-***
+
+[__Read the Paper__](https://link.springer.com/article/10.1007/s40192-019-00128-5) | [__Demo__](https://bisque2.ece.ucsb.edu/module_service/Composite_Strength/)
 
 ## Description
-This module implements a surrogate model that predicts effective yield strength of a composite given its 3-D microstructure. The model is developed for composites with strength contrast of 5: strength of hard phase s2/s1 = 5. The model works best on periodic 3-D microstructures. Calibration of the model is done by finite element simulation data by multivariate polynomial regression between principal component scores of 2-point statistics (representing microstructure) and effective yield strength (property). 
+This module implements a surrogate model that predicts effective yield strength of a composite given its 3-D microstructure. The model is developed for composites with strength contrast of 5: strength of hard phase $s2/s1 = 5$. The model works best on periodic 3-D microstructures. Calibration of the model is done by finite element simulation data by multivariate polynomial regression between principal component scores of 2-point statistics (representing microstructure) and effective yield strength (property). 
 
-![Workflow](https://bisque.ece.ucsb.edu/module_service/Composite_Strength/public/marat_workflow.png)
+![Workflow](https://bisque2.ece.ucsb.edu/module_service/Composite_Strength/public/marat_workflow.png)
 
 ## BisQue Platform
 
